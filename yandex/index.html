@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YANDEX免费入口-官方镜像导航与安全访问指南</title>
+    <meta name="description" content="提供YANDEX免费入口的最新可用地址、镜像站点导航、安全访问建议及常见问题解答，帮助您快速、顺畅地使用Yandex搜索及相关服务。">
+    <meta name="keywords" content="YANDEX免费入口,Yandex搜索,镜像入口,免费访问,搜索引擎导航">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #fc3f1d;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: white;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: #fc3f1d;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .header-nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .header-nav a:hover {
+            color: white;
+            border-bottom-color: #fc3f1d;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(145deg, #0b1120 0%, #1a2332 60%, #2d1b4e 100%);
+            padding: 80px 0 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(252,63,29,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .highlight {
+            color: #fc3f1d;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 28px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #fc3f1d;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #e03515;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #cbd5e1;
+            padding: 13px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            border: 1px solid #475569;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: #fc3f1d;
+            color: white;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .hero-card .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(34,197,94,0.2);
+            color: #4ade80;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero-card .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero-card .entry-list {
+            text-align: left;
+            margin-top: 18px;
+        }
+
+        .entry-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .entry-item:last-child {
+            border-bottom: none;
+        }
+
+        .entry-item .domain {
+            color: #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .entry-item .tag {
+            background: #fc3f1d;
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .entry-item .tag.green {
+            background: #22c55e;
+        }
+
+        .entry-item .tag.orange {
+            background: #f59e0b;
+        }
+
+        /* Quick Entry Section */
+        .quick-entry {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .entry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .entry-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .entry-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+            border-color: #fc3f1d;
+        }
+
+        .entry-card .icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #fc3f1d, #ff6b4a);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+        }
+
+        .entry-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #1e293b;
+        }
+
+        .entry-card .url {
+            color: #fc3f1d;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+            word-break: break-all;
+        }
+
+        .entry-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .entry-card .btn-go {
+            background: #1e293b;
+            color: white;
+            padding: 10px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .entry-card .btn-go:hover {
+            background: #fc3f1d;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 70px 0;
+            background: #f8fafc;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            border-color: #fc3f1d;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: #fef2f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+
+        .feature-item p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Guide Section */
+        .guide {
+            padding: 70px 0;
+            background: white;
+        }
+
+        .guide-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step-card {
+            position: relative;
+            padding: 30px 24px;
+            background: #f8fafc;
+            border-radius: 16px;
+            border-left: 4px solid #fc3f1d;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(252,63,29,0.15);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .step-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+
+        .step-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 70px 0;
+            background: #f8fafc;
+        }
+
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            padding: 24px 30px;
+            margin-bottom: 16px;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: #fc3f1d;
+        }
+
+        .faq-item h3 {
+            font-size: 1.05rem;
+            color: #1e293b;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item h3::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #fc3f1d;
+            font-weight: 300;
+        }
+
+        .faq-item p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #0f172a;
+            padding: 40px 0 30px;
+            color: #94a3b8;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-brand .logo-text {
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 60px;
+        }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #fc3f1d;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-card {
+                max-width: 500px;
+            }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            .header-nav {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 50px 0;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                flex-direction: column;
+            }
+            .footer-links {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .entry-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn-primary, .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo-area">
+            <div class="logo-icon">Y</div>
+            <div class="logo-text">Yandex<span>入口导航</span></div>
+        </div>
+        <nav>
+            <ul class="header-nav">
+                <li><a href="#quick-entry">免费入口</a></li>
+                <li><a href="#features">核心服务</a></li>
+                <li><a href="#guide">使用指南</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div>
+                <h1>YANDEX免费入口<br><span class="highlight">安全、快捷的访问方式</span></h1>
+                <p>Yandex作为俄罗斯领先的互联网搜索引擎，提供搜索、地图、翻译、邮箱等众多服务。这里为您整理了当前可用的免费入口和镜像地址，帮助您快速、安全地访问Yandex全部功能。</p>
+                <div class="hero-buttons">
+                    <a href="#quick-entry" class="btn-primary">立即访问入口</a>
+                    <a href="#guide" class="btn-outline">查看使用指南</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="status">
+                    <span class="status-dot"></span>
+                    当前入口状态：正常
+                </div>
+                <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:10px;">最新更新：2025年2月</p>
+                <div class="entry-list">
+                    <div class="entry-item">
+                        <span class="domain">yandex.com</span>
+                        <span class="tag green">推荐</span>
+                    </div>
+                    <div class="entry-item">
+                        <span class="domain">yandex.ru</span>
+                        <span class="tag green">推荐</span>
+                    </div>
+                    <div class="entry-item">
+                        <span class="domain">yandex.com.tr</span>
+                        <span class="tag orange">备用</span>
+                    </div>
+                    <div class="entry-item">
+                        <span class="domain">yandex.eu</span>
+                        <span class="tag orange">备用</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="quick-entry" id="quick-entry">
+    <div class="container">
+        <div class="section-title">
+            <h2>Yandex 免费入口列表</h2>
+            <p>以下入口均为Yandex官方域名，您可以根据网络环境选择最适合的地址访问</p>
+        </div>
+        <div class="entry-grid">
+            <div class="entry-card">
+                <div class="icon">🌐</div>
+                <h3>Yandex 国际版</h3>
+                <div class="url">yandex.com</div>
+                <p>面向国际用户的官方入口，支持多语言界面，包括中文。访问速度相对稳定。</p>
+                <a href="https://yandex.com" class="btn-go" target="_blank" rel="noopener noreferrer">前往访问</a>
+            </div>
+            <div class="entry-card">
+                <div class="icon">🇷🇺</div>
+                <h3>Yandex 俄罗斯版</h3>
+                <div class="url">yandex.ru</div>
+                <p>俄罗斯本土最常用的入口，功能最完整。适合需要完整俄语内容和服务的用户。</p>
+                <a href="https://yandex.ru" class="btn-go" target="_blank" rel="noopener noreferrer">前往访问</a>
+            </div>
+            <div class="entry-card">
+                <div class="icon">🇹🇷</div>
+                <h3>Yandex 土耳其版</h3>
+                <div class="url">yandex.com.tr</div>
+                <p>面向土耳其及周边地区用户的入口，在某些网络环境下可能更加通畅。</p>
+                <a href="https://yandex.com.tr" class="btn-go" target="_blank" rel="noopener noreferrer">前往访问</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <div class="container">
+        <div class="section-title">
+            <h2>Yandex 核心服务介绍</h2>
+            <p>了解Yandex旗下丰富的互联网服务，充分利用这一综合性平台</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">🔍</div>
+                <h3>Yandex 搜索</h3>
+                <p>Yandex拥有自主研发的搜索引擎技术，在俄语搜索领域处于领先地位，同时支持多语言搜索，提供精准、全面的搜索结果。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🗺️</div>
+                <h3>Yandex 地图</h3>
+                <p>提供全球地图服务，尤其在俄罗斯和独联体国家拥有非常详尽的地理数据。支持街景、交通路况、导航等功能。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📧</div>
+                <h3>Yandex 邮箱</h3>
+                <p>免费的企业级邮箱服务，提供邮箱、日历、网盘等一体化办公工具。支持自定义域名邮箱，安全性和稳定性良好。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🌍</div>
+                <h3>Yandex 翻译</h3>
+                <p>支持超过90种语言的在线翻译服务，尤其在俄语与中文、英语之间的翻译质量上表现优异，提供网页和文档翻译功能。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🚗</div>
+                <h3>Yandex 出行</h3>
+                <p>涵盖打车、外卖、共享单车等多种本地生活服务，在俄罗斯及周边国家市场份额领先，是日常生活的重要应用。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎵</div>
+                <h3>Yandex 音乐</h3>
+                <p>俄罗斯主流的流媒体音乐平台，拥有大量俄语音乐版权和个性化推荐功能，提供免费和付费两种模式。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="guide" id="guide">
+    <div class="container">
+        <div class="section-title">
+            <h2>使用指南与安全建议</h2>
+            <p>确保您能够安全、顺畅地使用Yandex各种服务</p>
+        </div>
+        <div class="guide-steps">
+            <div class="step-card">
+                <span class="step-number">01</span>
+                <h3>选择合适的入口</h3>
+                <p>根据您所在地区和网络情况，从上方列表中选择访问速度最快的入口。建议保存多个备用入口以备不时之需。</p>
+            </div>
+            <div class="step-card">
+                <span class="step-number">02</span>
+                <h3>注意网络环境</h3>
+                <p>访问Yandex部分服务时，请遵守当地法律法规。如遇到访问困难，可尝试切换网络环境或使用备用入口。</p>
+            </div>
+            <div class="step-card">
+                <span class="step-number">03</span>
+                <h3>开启账户保护</h3>
+                <p>注册Yandex账户后，建议开启两步验证功能，保障账户安全。不要使用与其他平台相同的密码。</p>
+            </div>
+            <div class="step-card">
+                <span class="step-number">04</span>
+                <h3>善用隐私设置</h3>
+                <p>Yandex提供丰富的隐私设置选项，您可以根据个人需求调整搜索历史、广告推荐等数据收集行为。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq" id="faq">
+    <div class="container">
+        <div class="section-title">
+            <h2>常见问题解答</h2>
+            <p>关于Yandex免费入口的常见疑问与解答</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>Yandex和Google有什么不同？</h3>
+                <p>Yandex是俄罗斯最大的互联网公司，其搜索算法在俄语处理方面具有优势，对复杂的俄语语法和变格有更好的理解能力。此外，Yandex在俄罗斯及独联体国家拥有完整的地图、交通、生活服务生态。</p>
+            </div>
+            <div class="faq-item">
+                <h3>为什么有些Yandex入口无法访问？</h3>
+                <p>由于国际网络环境的影响，部分Yandex域名在不同地区可能会遇到访问限制。建议您尝试列表中的多个入口，或使用国际版的yandex.com域名。同时，请确保您的设备网络设置正常。</p>
+            </div>
+            <div class="faq-item">
+                <h3>使用Yandex免费入口是否需要注册？</h3>
+                <p>不需要。您可以直接使用Yandex搜索等基础服务，无需注册。但如果您需要使用邮箱、网盘、个性化设置等功能，则需要免费注册一个Yandex账户。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Yandex支持中文界面吗？</h3>
+                <p>是的。Yandex国际版支持包括中文在内的多种语言界面。您可以在设置中切换显示语言，也可以使用Yandex翻译功能将页面内容翻译成中文。</p>
+            </div>
+            <div class="faq-item">
+                <h3>如何保障在Yandex上的个人信息安全？</h3>
+                <p>建议您：使用独立的强密码、开启两步验证、定期检查账户登录记录、谨慎授权第三方应用。同时，在公共设备上使用后务必退出账户并清除浏览器缓存。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Yandex的搜索质量如何？</h3>
+                <p>Yandex在全球搜索引擎市场份额中排名前列，尤其在俄语地区占据主导地位。其搜索算法在本地化结果、图片搜索、视频搜索等方面表现优秀，同时也在持续改进多语言搜索体验。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-text">Yandex<span>入口导航</span></span>
+                <p>本页面仅为Yandex官方入口的信息整理与导航，帮助用户快速找到可用的访问地址。所有服务均由Yandex官方提供。</p>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#quick-entry">免费入口</a></li>
+                        <li><a href="#features">核心服务</a></li>
+                        <li><a href="#guide">使用指南</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Yandex服务</h4>
+                    <ul>
+                        <li><a href="https://yandex.com/search/" target="_blank" rel="noopener noreferrer">搜索</a></li>
+                        <li><a href="https://yandex.com/maps/" target="_blank" rel="noopener noreferrer">地图</a></li>
+                        <li><a href="https://mail.yandex.com/" target="_blank" rel="noopener noreferrer">邮箱</a></li>
+                        <li><a href="https://translate.yandex.com/" target="_blank" rel="noopener noreferrer">翻译</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Yandex入口导航 | 本页面为非官方信息整理页面，所有商标归Yandex所有</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
