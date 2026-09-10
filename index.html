@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快猫段视频-热门短视频精选与创作灵感分享平台</title>
+    <meta name="description" content="快猫段视频是一个专注于搞笑、创意、生活技巧类短视频内容的精选与创作灵感分享平台，提供热门段子视频推荐、拍摄技巧和每日更新榜单。">
+    <meta name="keywords" content="快猫段视频,短视频,搞笑视频,段子视频,热门短视频,创作灵感,视频推荐">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 页眉 */
+        .site-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #ff6b6b;
+        }
+        .logo small {
+            font-size: 0.7rem;
+            font-weight: 300;
+            margin-left: 8px;
+            opacity: 0.8;
+            letter-spacing: 2px;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 28px;
+            font-size: 0.95rem;
+        }
+        .main-nav a {
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            opacity: 0.85;
+        }
+        .main-nav a:hover {
+            opacity: 1;
+            border-bottom-color: #ff6b6b;
+        }
+        .header-search {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 6px 6px 6px 16px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .header-search input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            width: 180px;
+            font-size: 0.9rem;
+        }
+        .header-search input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+        .header-search button {
+            background: #ff6b6b;
+            border: none;
+            border-radius: 30px;
+            padding: 6px 16px;
+            color: #fff;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .header-search button:hover {
+            background: #e05555;
+        }
+
+        /* 首屏 Hero */
+        .hero {
+            background: linear-gradient(180deg, #16213e 0%, #0f3460 100%);
+            color: #fff;
+            padding: 60px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            right: -60px;
+            top: -60px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,107,107,0.2);
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-text h1 {
+            font-size: 2.6rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .hero-text h1 span {
+            color: #ff6b6b;
+        }
+        .hero-text p {
+            font-size: 1.05rem;
+            opacity: 0.85;
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #ff6b6b;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+        }
+        .btn-primary:hover {
+            background: #e05555;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255,107,107,0.4);
+        }
+        .btn-outline {
+            border: 2px solid rgba(255,255,255,0.5);
+            color: #fff;
+            padding: 10px 26px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover {
+            border-color: #ff6b6b;
+            color: #ff6b6b;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat strong {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ff6b6b;
+        }
+        .hero-stat span {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+        .hero-visual {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+        }
+        .hero-video-card {
+            background: #1a1a2e;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .video-thumb {
+            height: 200px;
+            background: linear-gradient(135deg, #0f3460, #533483);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .video-thumb .play-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,107,107,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 0 30px rgba(255,107,107,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .video-thumb .play-icon:hover {
+            transform: scale(1.1);
+        }
+        .video-info {
+            padding: 16px;
+        }
+        .video-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .video-info .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        /* 分类栏 */
+        .categories {
+            padding: 40px 0 20px;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: #ff6b6b;
+            border-radius: 4px;
+        }
+        .section-desc {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 16px;
+        }
+        .category-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #f0f0f0;
+        }
+        .category-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-color: #ff6b6b;
+        }
+        .category-icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .category-item h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .category-item p {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        /* 今日热门 */
+        .hot-section {
+            padding: 40px 0;
+        }
+        .hot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .hot-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        .hot-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+        .card-thumb {
+            height: 160px;
+            background: linear-gradient(135deg, #0f3460, #533483);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        .card-thumb .rank {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #ff6b6b;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+        .card-thumb .duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+        }
+        .card-body {
+            padding: 16px;
+        }
+        .card-body h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #888;
+        }
+        .card-meta .likes {
+            color: #ff6b6b;
+            font-weight: 600;
+        }
+
+        /* 创作灵感 */
+        .inspire-section {
+            background: linear-gradient(135deg, #0f3460, #1a1a2e);
+            color: #fff;
+            padding: 60px 0;
+        }
+        .inspire-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+        .inspire-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+        .inspire-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-4px);
+        }
+        .inspire-icon {
+            font-size: 2rem;
+            margin-bottom: 14px;
+        }
+        .inspire-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .inspire-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* 更新榜单 */
+        .update-section {
+            padding: 50px 0;
+            background: #fff;
+        }
+        .update-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .update-list {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 20px;
+        }
+        .update-list h3 {
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .update-list ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        .update-list ul li:last-child {
+            border-bottom: none;
+        }
+        .update-list .time {
+            color: #888;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+        .tag {
+            background: #ff6b6b;
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-right: 8px;
+        }
+
+        /* 拍摄技巧 */
+        .tips-section {
+            padding: 50px 0;
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .tip-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-top: 4px solid #ff6b6b;
+        }
+        .tip-item h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #0f3460;
+        }
+        .tip-item p {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            padding: 50px 0;
+            background: #fff;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+            border-left: 4px solid #ff6b6b;
+        }
+        .faq-item h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+        }
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #16213e;
+            color: rgba(255,255,255,0.7);
+            padding: 40px 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-grid h4 {
+            color: #fff;
+            margin-bottom: 14px;
+            font-size: 1rem;
+        }
+        .footer-grid ul li {
+            padding: 4px 0;
+            font-size: 0.85rem;
+        }
+        .footer-grid ul li a:hover {
+            color: #ff6b6b;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        /* 响应式 */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .update-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .main-nav ul {
+                gap: 16px;
+                font-size: 0.85rem;
+            }
+            .header-search {
+                width: 100%;
+            }
+            .header-search input {
+                flex: 1;
+                width: auto;
+            }
+            .hero {
+                padding: 40px 0;
+            }
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            .category-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+            .hot-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .hot-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-stat strong {
+                font-size: 1.3rem;
+            }
+            .hero-btns {
+                flex-direction: column;
+            }
+            .btn-primary, .btn-outline {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            快猫<span>段视频</span>
+            <small>KMSP</small>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#hot">今日热门</a></li>
+                <li><a href="#categories">分类</a></li>
+                <li><a href="#inspire">创作灵感</a></li>
+                <li><a href="#update">更新榜单</a></li>
+                <li><a href="#tips">拍摄技巧</a></li>
+            </ul>
+        </nav>
+        <div class="header-search">
+            <input type="text" placeholder="搜索段子、创意...">
+            <button>搜索</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h1>发现最有趣的<span>段视频</span><br>让每一秒都值得</h1>
+            <p>快猫段视频专注于搜集全网爆笑、创意、生活技巧类短视频内容，助你快速找到灵感，轻松创作属于自己的热门作品。</p>
+            <div class="hero-btns">
+                <a href="#hot" class="btn-primary">立即观看</a>
+                <a href="#inspire" class="btn-outline">获取灵感</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>1000+</strong>
+                    <span>每日更新</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>50万+</strong>
+                    <span>创作者</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>5000万+</strong>
+                    <span>播放次数</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-video-card">
+                <div class="video-thumb">
+                    <div class="play-icon">▶</div>
+                </div>
+                <div class="video-info">
+                    <h3>本周神级反转段子合集</h3>
+                    <div class="meta">
+                        <span>🔥 245万次播放</span>
+                        <span>⏱ 03:25</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="categories" id="categories">
+    <div class="container">
+        <h2 class="section-title">热门分类</h2>
+        <p class="section-desc">无论你偏爱哪种风格，总有一个分类适合你</p>
+        <div class="category-grid">
+            <div class="category-item">
+                <div class="category-icon">😂</div>
+                <h3>搞笑段子</h3>
+                <p>每日爆笑更新</p>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">🎬</div>
+                <h3>创意短片</h3>
+                <p>脑洞大开之作</p>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">🍳</div>
+                <h3>生活技巧</h3>
+                <p>实用妙招分享</p>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">🐱</div>
+                <h3>萌宠日常</h3>
+                <p>治愈系内容</p>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">🎮</div>
+                <h3>游戏集锦</h3>
+                <p>高光操作时刻</p>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">💃</div>
+                <h3>舞蹈翻跳</h3>
+                <p>热门舞蹈跟练</p>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">🍜</div>
+                <h3>美食探店</h3>
+                <p>味蕾视觉盛宴</p>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">🎵</div>
+                <h3>音乐翻唱</h3>
+                <p>好听歌曲推荐</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hot-section" id="hot">
+    <div class="container">
+        <h2 class="section-title">今日热门段视频</h2>
+        <p class="section-desc">根据实时热度与互动数据综合排序，每2小时更新一次</p>
+        <div class="hot-grid">
+            <div class="hot-card">
+                <div class="card-thumb">
+                    <span class="rank">1</span>
+                    <span>😂</span>
+                    <span class="duration">02:18</span>
+                </div>
+                <div class="card-body">
+                    <h3>当室友突然开始认真学习，这反转绝了！</h3>
+                    <div class="card-meta">
+                        <span>@段子手老王</span>
+                        <span class="likes">❤ 18.2万</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-card">
+                <div class="card-thumb">
+                    <span class="rank">2</span>
+                    <span>🤣</span>
+                    <span class="duration">01:45</span>
+                </div>
+                <div class="card-body">
+                    <h3>老板：明天加班！员工的反击让我笑到肚子疼</h3>
+                    <div class="card-meta">
+                        <span>@职场那些事</span>
+                        <span class="likes">❤ 15.8万</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-card">
+                <div class="card-thumb">
+                    <span class="rank">3</span>
+                    <span>😆</span>
+                    <span class="duration">03:02</span>
+                </div>
+                <div class="card-body">
+                    <h3>妈妈眼中的我和现实中的我，差距也太大了吧</h3>
+                    <div class="card-meta">
+                        <span>@生活观察局</span>
+                        <span class="likes">❤ 12.6万</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-card">
+                <div class="card-thumb">
+                    <span class="rank">4</span>
+                    <span>🐶</span>
+                    <span class="duration">00:58</span>
+                </div>
+                <div class="card-body">
+                    <h3>二哈拆家被当场抓获，表情笑疯全网</h3>
+                    <div class="card-meta">
+                        <span>@萌宠集结号</span>
+                        <span class="likes">❤ 10.3万</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-card">
+                <div class="card-thumb">
+                    <span class="rank">5</span>
+                    <span>🎯</span>
+                    <span class="duration">02:30</span>
+                </div>
+                <div class="card-body">
+                    <h3>挑战全网最离谱的厨房妙招，最后一个太实用了</h3>
+                    <div class="card-meta">
+                        <span>@生活小百科</span>
+                        <span class="likes">❤ 9.7万</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hot-card">
+                <div class="card-thumb">
+                    <span class="rank">6</span>
+                    <span>🎮</span>
+                    <span class="duration">01:20</span>
+                </div>
+                <div class="card-body">
+                    <h3>游戏里最离谱的BUG合集，程序员看了沉默</h3>
+                    <div class="card-meta">
+                        <span>@游戏菌</span>
+                        <span class="likes">❤ 8.4万</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="inspire-section" id="inspire">
+    <div class="container">
+        <h2 class="section-title" style="color:#fff;">创作灵感库</h2>
+        <p style="opacity:0.7; margin-bottom:10px;">不知道怎么拍？来这里找找灵感吧</p>
+        <div class="inspire-grid">
+            <div class="inspire-card">
+                <div class="inspire-icon">💡</div>
+                <h3>情境反转</h3>
+                <p>设计一个意想不到的结尾。比如：以为要吵架，结果是求婚。反转越强烈，效果越好。</p>
+            </div>
+            <div class="inspire-card">
+                <div class="inspire-icon">📢</div>
+                <h3>街头采访</h3>
+                <p>带着有趣的问题走上街头，路人的神回复往往比剧本更精彩。记得先征得对方同意。</p>
+            </div>
+            <div class="inspire-card">
+                <div class="inspire-icon">🎭</div>
+                <h3>一人分饰多角</h3>
+                <p>用简单道具和服装变化，一人扮演多个角色。切换镜头时注意保持动作连贯。</p>
+            </div>
+            <div class="inspire-card">
+                <div class="inspire-icon">⏰</div>
+                <h3>快慢速切换</h3>
+                <p>让正常动作突然加速或放慢，制造喜剧效果。适合拍摄日常琐事。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="update-section" id="update">
+    <div class="container">
+        <h2 class="section-title">最新更新与榜单</h2>
+        <p class="section-desc">实时掌握快猫段视频的动态</p>
+        <div class="update-layout">
+            <div class="update-list">
+                <h3>📺 最新上传</h3>
+                <ul>
+                    <li><span><span class="tag">新</span>地铁上遇到的社死瞬间</span><span class="time">12分钟前</span></li>
+                    <li><span><span class="tag">新</span>挑战一天不玩手机</span><span class="time">35分钟前</span></li>
+                    <li><span>猫咪第一次见到雪的反应</span><span class="time">1小时前</span></li>
+                    <li><span>食堂阿姨的颠勺技术有多强</span><span class="time">2小时前</span></li>
+                    <li><span>当北方人第一次吃折耳根</span><span class="time">3小时前</span></li>
+                </ul>
+            </div>
+            <div class="update-list">
+                <h3>🏆 创作者周榜</h3>
+                <ul>
+                    <li><span>🥇 @段子手老王</span><span class="time">涨粉 12.3万</span></li>
+                    <li><span>🥈 @生活小百科</span><span class="time">涨粉 9.8万</span></li>
+                    <li><span>🥉 @职场那些事</span><span class="time">涨粉 8.2万</span></li>
+                    <li><span>4. @萌宠集结号</span><span class="time">涨粉 6.5万</span></li>
+                    <li><span>5. @游戏菌</span><span class="time">涨粉 5.1万</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tips-section" id="tips">
+    <div class="container">
+        <h2 class="section-title">拍摄小技巧</h2>
+        <p class="section-desc">提升你的段视频质量，从这几个方面入手</p>
+        <div class="tips-grid">
+            <div class="tip-item">
+                <h3>📱 光线运用</h3>
+                <p>尽量面向光源拍摄，避免背光。如果室内光线不足，可以使用手机补光灯或台灯辅助。</p>
+            </div>
+            <div class="tip-item">
+                <h3>🎥 稳定画面</h3>
+                <p>手持拍摄时尽量夹紧双臂，或使用手机稳定器。画面稳定能极大提升观看体验。</p>
+            </div>
+            <div class="tip-item">
+                <h3>✂️ 节奏把控</h3>
+                <p>段视频前3秒最关键。开头抛出悬念或冲突，中间保持紧凑，结尾记得留一个记忆点。</p>
+            </div>
+            <div class="tip-item">
+                <h3>🔊 声音清晰</h3>
+                <p>尽量在安静环境录制，说话声音清晰。需要时可使用领夹麦克风提升收音质量。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq-section">
+    <div class="container">
+        <h2 class="section-title">常见问题</h2>
+        <p class="section-desc">关于快猫段视频，你可能想了解这些</p>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>Q：快猫段视频是官方平台吗？</h3>
+                <p>快猫段视频是一个内容推荐与创作灵感分享站点，非官方平台。我们专注于整理和推荐优质的短视频内容，帮助创作者发现好作品、获取创作思路。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q：如何投稿我的作品？</h3>
+                <p>目前我们主要通过公开渠道收集优质内容进行推荐。如果你有自创的短视频作品希望分享，可以在各大平台发布后，通过页面底部联系方式告知我们。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q：视频内容版权归属如何？</h3>
+                <p>本站仅做推荐与索引，所有视频版权归原作者所有。我们尊重原创者的劳动，若您发现内容存在版权问题，请与我们联系，我们会及时处理。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q：更新频率是怎样的？</h3>
+                <p>热门榜单每2小时自动更新一次，最新上传板块则实时刷新。拍摄技巧和灵感库内容每周补充更新，保持内容的新鲜度。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>快猫段视频</h4>
+                <p style="font-size:0.85rem; opacity:0.7;">发现有趣短视频，激发创作灵感。让每一段视频都充满惊喜。</p>
+            </div>
+            <div>
+                <h4>内容分类</h4>
+                <ul>
+                    <li><a href="#categories">搞笑段子</a></li>
+                    <li><a href="#categories">创意短片</a></li>
+                    <li><a href="#categories">生活技巧</a></li>
+                    <li><a href="#categories">萌宠日常</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>创作支持</h4>
+                <ul>
+                    <li><a href="#tips">拍摄技巧</a></li>
+                    <li><a href="#inspire">灵感库</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">平台介绍</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 快猫段视频 KMSP. 本页面内容仅供学习交流使用。
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                          </html>
